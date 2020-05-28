@@ -4,7 +4,7 @@ language: java
 before_install:
   - chmod +x mvnw
 # 执行脚本
-script: "mvnw clean package -Dmaven.javadoc.skip=true -B -V"
+script: "./mvnw clean package -Dmaven.javadoc.skip=true -B -V"
 # 通知
 notifications:
   email:
