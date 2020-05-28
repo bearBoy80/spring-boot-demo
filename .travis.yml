@@ -1,5 +1,8 @@
 # 语言
 language: java
+#mvnw权限配置
+before_install:
+  - chmod +x mvnw
 # 执行脚本
 script: "mvn clean package -Dmaven.javadoc.skip=true -B -V"
 # 通知
