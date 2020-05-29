@@ -1,0 +1,20 @@
+server:
+  port: 8100
+spring:
+  jmx:
+    enabled: true  #开启jmx
+  application:
+    name: ActuatorAuthApplication
+#开启jmx,web actuator 端点暴露
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+    web:
+      exposure:
+        include: "*"
+        exclude: shutdown
+logging:
+  level:
+    org.springframework : info

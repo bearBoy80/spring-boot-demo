@@ -6,6 +6,7 @@
     <modules>
         <module>spring-basic-auth</module>
         <module>spring-form-auth</module>
+        <module>spring-actuator-auth</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

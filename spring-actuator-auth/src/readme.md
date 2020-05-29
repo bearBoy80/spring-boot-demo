@@ -1,9 +1,9 @@
 # 项目介绍
-通过springboot 实现form 表单登录。
+通过springboot 实现form表单登录和HttpBasic混合登录,actuator Endpoint 通过Basic认证登录,/hello请求通过form表单登录
 ## 整合步骤
  - 添加依赖
  ```xml
-<dependencies>
+    <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -22,7 +22,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
-    </dependencies> 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
 ```
 - 自定义 WebSecurityConfigurerAdapter
 ```java
@@ -53,6 +57,21 @@ public class SecurityFormAuthConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/myLogin");
     }
 }
+
+/**
+ * @author bearBoy80
+ * Actuator Endpoint 增加httpBasic 认证，只有用户角色为ADMIN的才能访问
+ */
+@Configuration
+@Order(10)
+public class ActuatorAuthConfig extends WebSecurityConfigurerAdapter {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.requestMatcher(EndpointRequest.toAnyEndpoint()).authorizeRequests((requests) ->
+                requests.anyRequest().hasAnyRole("ADMIN", "USER"));
+        http.httpBasic();
+    }
+}
 ```
 - 实现UserDetailsService
 ```java
@@ -81,7 +100,7 @@ public class UserDetailServiceConfig {
     }
 }
 ```
-- 增加userInfo controller
+- 增加UserDetailController
 ```java
 /**
  * @author bearBoy
@@ -93,38 +112,50 @@ public class UserDetailController {
     public User userInfo(@AuthenticationPrincipal User user) {
         return user;
     }
+
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello Word Spring Security";
+    }
 }
 ```
+- 配置actuator 
+```yaml
+server:
+  port: 8100
+spring:
+  jmx:
+    enabled: true  #开启jmx
+  application:
+    name: ActuatorAuthApplication
+#开启jmx,web actuator 端点暴露
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+    web:
+      exposure:
+        include: "*"
+        exclude: shutdown
+logging:
+  level:
+    org.springframework : info
+```
 - 启动应用
- 运行FormAuthApplication
-- 验证
-  请求localhost:8100/userInfo,页面跳转到登录页面，输入user/password账户密码登录，登录成功后获取到凭证信息
+ 运行ActuatorAuthApplication
+- 验证form表单认证
+  请求http://localhost:8100/userInfo,页面跳转到登录页面，输入user/password账户密码登录，登录成功后获取到凭证信息
   
  [![tnJ3B8.th.png](https://s1.ax1x.com/2020/05/29/tnJ3B8.th.png)](https://imgchr.com/i/tnJ3B8) 
  [![tnJ8HS.th.png](https://s1.ax1x.com/2020/05/29/tnJ8HS.th.png)](https://imgchr.com/i/tnJ8HS)
 
-## 原理说明
- - form表单登录流程
- 
-[![tn0rtK.md.png](https://s1.ax1x.com/2020/05/29/tn0rtK.md.png)](https://imgchr.com/i/tn0rtK)
+- 验证basic认证
+  请求http://localhost:8100/actuator/health 弹出basic认证框,输入user/password账户密码登录
 
-- form表单认证流程
+[![tu1s81.png](https://s1.ax1x.com/2020/05/29/tu1s81.png)](https://imgchr.com/i/tu1s81)
+[![tu1rCR.md.png](https://s1.ax1x.com/2020/05/29/tu1rCR.md.png)](https://imgchr.com/i/tu1rCR)
 
-[![tn0sfO.md.png](https://s1.ax1x.com/2020/05/29/tn0sfO.md.png)](https://imgchr.com/i/tn0sfO)
-
-- form表单关键类 
-
- > UsernamePasswordAuthenticationFilter 拦截登录请求，通过username、password 拼接UsernamePasswordAuthenticationToken，
- 调用ProviderManager(AuthenticationManager子类).authenticate 进行认证
- 
- > ProviderManager 根据UsernamePasswordAuthenticationToken 选择DaoAuthenticationProvider.authenticate 进行认证
- 
- > DaoAuthenticationProvider 类 
- DaoAuthenticationProvider.authenticate(Authentication authentication)实现用户密码验证，并验证用户各种状态。
- 认证成功后重新生成 UsernamePasswordAuthenticationToken,否则抛AuthenticationException异常
- 
- > UsernamePasswordAuthenticationToken  存储用户凭证信息和权限信息
- 
  ## 部署应用到docker
  - 添加docker maven 插件 [fabric8](https://maven.fabric8.io/)
  ```xml
@@ -165,15 +196,15 @@ public class UserDetailController {
  #维护人
  MAINTAINER bearBoy80
  #复制jar到/usr/app目录
- COPY ./target/spring-form-auth-0.0.1-SNAPSHOT.jar /usr/app/
+ COPY ./target/spring-actuator-auth-0.0.1-SNAPSHOT.jar /usr/app/
  #指定镜像工作目录
  WORKDIR /usr/app
  #更新jar包信息
- RUN sh -c 'touch spring-form-auth-0.0.1-SNAPSHOT.jar'
+ RUN sh -c 'touch spring-actuator-auth-0.0.1-SNAPSHOT.jar'
  #暴露8010端口，实际运行镜像需要指定宿主端口 -P或者-p
  EXPOSE 8010
- #启动容器后启动spring-form-auth-0.0.1-SNAPSHOT.jar的应用
- ENTRYPOINT ["java", "-jar", "spring-form-auth-0.0.1-SNAPSHOT.jar"]
+ #启动容器后启动spring-actuator-auth-0.0.1-SNAPSHOT.jar的应用
+ ENTRYPOINT ["java", "-jar", "spring-actuator-auth-0.0.1-SNAPSHOT.jar"]
  ```
  - 生成镜像
  ```shell

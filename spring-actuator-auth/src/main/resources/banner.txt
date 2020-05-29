@@ -1,0 +1,11 @@
+${AnsiColor.RED}
+#  .______    _______      ___      .______      .______     ______   ____    ____  ___     ___
+#  |   _  \  |   ____|    /   \     |   _  \     |   _  \   /  __  \  \   \  /   / / _ \   / _ \
+#  |  |_)  | |  |__      /  ^  \    |  |_)  |    |  |_)  | |  |  |  |  \   \/   / | (_) | | | | |
+#  |   _  <  |   __|    /  /_\  \   |      /     |   _  <  |  |  |  |   \_    _/   > _ <  | | | |
+#  |  |_)  | |  |____  /  _____  \  |  |\  \----.|  |_)  | |  `--'  |     |  |    | (_) | | |_| |
+#  |______/  |_______|/__/     \__\ | _| `._____||______/   \______/      |__|     \___/   \___/
+#
+${AnsiColor.GREEN}author: bearBoy80 应用名称: ${spring.application.name}
+${AnsiColor.RED}springFrame Version: ${springFrame.version}
+${AnsiColor.RED}Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
