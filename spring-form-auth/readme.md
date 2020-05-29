@@ -125,3 +125,62 @@ public class UserDetailController {
  
  > UsernamePasswordAuthenticationToken  存储用户凭证信息和权限信息
  
+ ## 部署应用到docker
+ - 添加docker maven 插件 [fabric8](https://maven.fabric8.io/)
+ ```xml
+ <plugin>
+                     <groupId>io.fabric8</groupId>
+                     <artifactId>docker-maven-plugin</artifactId>
+                     <version>0.33.0</version>
+                     <extensions>true</extensions>
+                     <configuration>
+                         <verbose>true</verbose>
+                         <dockerHost>docker容器IP:2375</dockerHost>
+                         <images>
+                             <image>
+                                 <name>${project.artifactId}</name>
+                                 <build>
+                                     <dockerFileDir>
+                                         ${project.basedir}
+                                     </dockerFileDir>
+                                 </build>
+                             </image>
+                         </images>
+                     </configuration>
+                     <executions>
+                         <execution>
+                             <id>build</id>
+                             <phase>post-integration-test</phase>
+                             <goals>
+                                 <goal>build</goal>
+                             </goals>
+                         </execution>
+                     </executions>
+                 </plugin>
+ ```
+ - 添加dockerfile文件
+ ```text
+ # 基于java:8-jdk-alpine 镜像进行创建
+ FROM java:8-jdk-alpine
+ #维护人
+ MAINTAINER bearBoy80
+ #复制jar到/usr/app目录
+ COPY ./target/spring-form-auth-0.0.1-SNAPSHOT.jar /usr/app/
+ #指定镜像工作目录
+ WORKDIR /usr/app
+ #更新jar包信息
+ RUN sh -c 'touch spring-basic-auth-0.0.1-SNAPSHOT.jar'
+ #暴露8010端口，实际运行镜像需要指定宿主端口 -P或者-p
+ EXPOSE 8010
+ #启动容器后启动spring-form-auth-0.0.1-SNAPSHOT.jar的应用
+ ENTRYPOINT ["java", "-jar", "spring-form-auth-0.0.1-SNAPSHOT.jar"]
+ ```
+ - 生成镜像
+ ```shell
+ mvn package fabric8:build
+ ```
+ - 部署镜像到容器
+ ```shell
+ docker run -d 镜像id -P
+ ```
+ 
