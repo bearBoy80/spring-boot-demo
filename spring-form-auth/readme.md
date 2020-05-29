@@ -100,17 +100,17 @@ public class UserDetailController {
 - 验证
   请求localhost:8100/userInfo,页面跳转到登录页面，输入user/password账户密码登录，登录成功后获取到凭证信息
   
- [![tnJ3B8.th.png](https://s1.ax1x.com/2020/05/29/tnJ3B8.th.png)](https://imgchr.com/i/tnJ3B8) 
- [![tnJ8HS.th.png](https://s1.ax1x.com/2020/05/29/tnJ8HS.th.png)](https://imgchr.com/i/tnJ8HS)
+ ![tnJ3B8.th.png](../assert/form-login.png)
+ ![tnJ8HS.th.png](../assert/form-succ.png)
 
 ## 原理说明
  - form表单登录流程
  
-[![tn0rtK.md.png](https://s1.ax1x.com/2020/05/29/tn0rtK.md.png)](https://imgchr.com/i/tn0rtK)
+![tn0rtK.md.png](../assert/loginurlauthenticationentrypoint.png)
 
 - form表单认证流程
 
-[![tn0sfO.md.png](https://s1.ax1x.com/2020/05/29/tn0sfO.md.png)](https://imgchr.com/i/tn0sfO)
+![tn0sfO.md.png](../assert/usernamepasswordauthenticationfilter.png)
 
 - form表单关键类 
 

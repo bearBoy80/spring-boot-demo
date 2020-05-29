@@ -147,14 +147,14 @@ logging:
 - 验证form表单认证
   请求http://localhost:8100/userInfo,页面跳转到登录页面，输入user/password账户密码登录，登录成功后获取到凭证信息
   
- [![tnJ3B8.th.png](https://s1.ax1x.com/2020/05/29/tnJ3B8.th.png)](https://imgchr.com/i/tnJ3B8) 
- [![tnJ8HS.th.png](https://s1.ax1x.com/2020/05/29/tnJ8HS.th.png)](https://imgchr.com/i/tnJ8HS)
+ ![tnJ3B8.th.png](../assert/form-login.png)
+ ![tnJ8HS.th.png](../assert/form-succ.png)
 
 - 验证basic认证
   请求http://localhost:8100/actuator/health 弹出basic认证框,输入user/password账户密码登录
-
-[![tu1s81.png](https://s1.ax1x.com/2020/05/29/tu1s81.png)](https://imgchr.com/i/tu1s81)
-[![tu1rCR.md.png](https://s1.ax1x.com/2020/05/29/tu1rCR.md.png)](https://imgchr.com/i/tu1rCR)
+  
+![tu1s81.png](../assert/Actuator-basic-login.png)
+![tu1rCR.md.png](../assert/Actuator-basic.png)
 
  ## 部署应用到docker
  - 添加docker maven 插件 [fabric8](https://maven.fabric8.io/)
