@@ -1,0 +1,12 @@
+server:
+  port: 8100
+logging:
+  level:
+    com.github.bearboy.spring : debug
+  file:
+    name: ./logfile/form-auth.log
+spring:
+  security:
+    user:
+      name: test
+      password: test

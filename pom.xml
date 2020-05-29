@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-basic-auth</module>
+        <module>spring-form-auth</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
