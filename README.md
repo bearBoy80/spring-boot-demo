@@ -1,6 +1,6 @@
 <h1 align="center"><a href="https://github.com/bearBoy80/springSecurity.git" target="_blank">Spring Security</a></h1>
 <p align="center">
-  <a href="https://travis-ci.com/xkcoding/spring-boot-demo"><img alt="Travis-CI" src="https://travis-ci.com/bearBoy80/springSecurity.svg?branch=master"/></a>
+  <a href="https://travis-ci.com/github/bearBoy80/springSecurity"><img alt="Travis-CI" src="https://travis-ci.com/bearBoy80/springSecurity.svg?branch=master"/></a>
   <a href="https://www.codacy.com/manual/bearBoy80/springSecurity?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bearBoy80/springSecurity&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/b800466e41b140f28af11764be7b6495"/></a>
   <a href="http://www.betool.vip/"><img alt="author" src="https://img.shields.io/badge/author-bearBoy80-blue"/></a>
   <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html"><img alt="JDK" src="https://img.shields.io/badge/JDK-1.8+-orange.svg"/></a>
