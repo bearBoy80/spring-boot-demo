@@ -2,7 +2,9 @@
 package com.github.bearboy.spring.common.filter;
 
 import com.github.bearboy.spring.common.exception.JwtException;
+import com.github.bearboy.spring.common.utils.Constant;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -16,22 +18,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ValidateCodeFilter extends OncePerRequestFilter implements InitializingBean {
+/**
+ * @author bearBoy80
+ */
+public class ValidateCodeFilter extends OncePerRequestFilter {
 
     /**
      * 存放所有需要校验验证码的url,比如手机验证码
      */
-    private List urls = new ArrayList();
+    private List<String> urls = new ArrayList();
 
     /**
      * 验证请求url与配置的url是否匹配的工具类
      */
     private AntPathMatcher pathMatcher = new AntPathMatcher();
 
-    @Override
-    public void afterPropertiesSet() throws ServletException {
-        super.afterPropertiesSet();
-        urls.add("/smsCodeLogin");
+
+    public void setUrls(List<String> urls) {
+        this.urls = urls;
     }
 
     @Override
@@ -39,24 +43,31 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
             throws ServletException, IOException {
 
         //判断是否需要拦截请求
+        if (matchUrl(request)) {
+            String smsCode = request.getParameter("smsCode");
+            try {
+                if (StringUtils.hasText(smsCode)) {
+                    //todo 实现短信验证码逻辑
+                    logger.info("验证码校验通过");
+                } else {
+                    throw new JwtException("短信验证码不能为空");
+                }
 
-
-        String smsCode = request.getParameter("smsCode");
-
-        try {
-            if (StringUtils.hasText(smsCode)) {
-                //todo 实现短信验证码逻辑
-                logger.info("验证码校验通过");
-            } else {
-                throw new JwtException("短信验证码不能为空");
+            } catch (Exception exception) {
+                throw new JwtException(exception.getMessage());
             }
-
-        } catch (Exception exception) {
-            throw new JwtException(exception.getMessage());
         }
-
         chain.doFilter(request, response);
-
     }
 
+    private boolean matchUrl(HttpServletRequest request) {
+        boolean flag = false;
+        for (String url : urls) {
+            if (pathMatcher.match(url, request.getRequestURI())) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
 }

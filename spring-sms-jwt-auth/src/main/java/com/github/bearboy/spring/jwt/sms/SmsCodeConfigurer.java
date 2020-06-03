@@ -20,6 +20,8 @@
 package com.github.bearboy.spring.jwt.sms;
 
 
+import com.github.bearboy.spring.common.filter.ValidateCodeFilter;
+import com.github.bearboy.spring.common.utils.Constant;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -31,6 +33,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.util.Assert;
+
+import java.util.Arrays;
 
 /**
  * @author bearBoy80
@@ -48,7 +52,7 @@ public class SmsCodeConfigurer<H extends HttpSecurityBuilder<H>> extends
     private AuthenticationSuccessHandler successHandler = this.defaultSuccessHandler;
 
     private RequestMatcher requiresAuthenticationRequestMatcher =
-            new AntPathRequestMatcher("/smsCodeLogin", "POST");
+            new AntPathRequestMatcher(Constant.SMS_PROCESS_URL, "POST");
 
     @Override
     public void init(H builder) throws Exception {
@@ -64,9 +68,12 @@ public class SmsCodeConfigurer<H extends HttpSecurityBuilder<H>> extends
         smsCodeAuthenticationFilter.setAuthenticationManager(builder
                 .getSharedObject(AuthenticationManager.class));
 
+        ValidateCodeFilter codeFilter = new ValidateCodeFilter();
+        codeFilter.setUrls(Arrays.asList(Constant.SMS_PROCESS_URL));
         smsCodeAuthenticationFilter.setRequiresAuthenticationRequestMatcher(requiresAuthenticationRequestMatcher);
         builder.authenticationProvider(smsCodeAuthenticationProvider).
-                addFilterBefore(smsCodeAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                addFilterBefore(smsCodeAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(codeFilter, SmsCodeAuthenticationFilter.class);
     }
 
     public SmsCodeConfigurer(UserDetailsService userDetailsService) {

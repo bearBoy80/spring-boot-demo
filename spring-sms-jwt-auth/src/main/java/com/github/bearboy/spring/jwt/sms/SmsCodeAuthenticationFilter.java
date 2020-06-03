@@ -20,6 +20,7 @@
 
 package com.github.bearboy.spring.jwt.sms;
 
+import com.github.bearboy.spring.common.utils.Constant;
 import org.springframework.lang.Nullable;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
@@ -54,7 +55,7 @@ public class SmsCodeAuthenticationFilter extends
     // ===================================================================================================
 
     public SmsCodeAuthenticationFilter() {
-        super(new AntPathRequestMatcher("/smsCodeLogin", "POST"));
+        super(new AntPathRequestMatcher(Constant.SMS_PROCESS_URL, "POST"));
     }
 
     // ~ Methods

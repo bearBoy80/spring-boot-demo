@@ -22,7 +22,7 @@ import java.io.IOException;
 public class SuccessJwtHandler implements AuthenticationSuccessHandler {
 
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {

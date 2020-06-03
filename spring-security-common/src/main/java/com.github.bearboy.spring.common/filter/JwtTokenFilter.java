@@ -28,10 +28,10 @@ import java.io.IOException;
 public class JwtTokenFilter extends OncePerRequestFilter {
 
     @Autowired
-    BearerTokenResolver bearerTokenResolver;
+    private BearerTokenResolver bearerTokenResolver;
 
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @Autowired
     private UserDetailsService userDetailsService;

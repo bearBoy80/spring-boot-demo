@@ -23,7 +23,7 @@ import java.io.IOException;
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {
 
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,

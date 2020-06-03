@@ -35,13 +35,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  */
 public class SmsCodeAuthenticationProvider implements AuthenticationProvider {
 
-    public void setUserDetailsService(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
-
     private UserDetailsService userDetailsService;
 
     private GrantedAuthoritiesMapper authoritiesMapper = new NullAuthoritiesMapper();
+
+
+    public void setUserDetailsService(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     /**
      * 验证手机号码是否存在系统
