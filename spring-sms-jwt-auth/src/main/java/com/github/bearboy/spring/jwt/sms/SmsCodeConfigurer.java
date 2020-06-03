@@ -21,7 +21,7 @@ package com.github.bearboy.spring.jwt.sms;
 
 
 import com.github.bearboy.spring.common.filter.ValidateCodeFilter;
-import com.github.bearboy.spring.common.utils.Constant;
+import com.github.bearboy.spring.common.constant.Constant;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;

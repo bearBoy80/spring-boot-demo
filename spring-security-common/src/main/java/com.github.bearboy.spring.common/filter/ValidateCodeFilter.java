@@ -2,9 +2,6 @@
 package com.github.bearboy.spring.common.filter;
 
 import com.github.bearboy.spring.common.exception.JwtException;
-import com.github.bearboy.spring.common.utils.Constant;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;

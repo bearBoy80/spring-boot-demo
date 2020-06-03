@@ -20,7 +20,7 @@
 
 package com.github.bearboy.spring.jwt.sms;
 
-import com.github.bearboy.spring.common.utils.Constant;
+import com.github.bearboy.spring.common.constant.Constant;
 import org.springframework.lang.Nullable;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
