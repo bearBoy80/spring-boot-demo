@@ -25,3 +25,5 @@ springboot2 整合spring security
 | [spring-basic-auth](./spring-basic-auth)                     | spring-boot 的一个http basic 认证 基于spring security 5.X             |
 | [spring-form-auth](./spring-form-auth)                       | spring-boot 的一个 form 认证 基于spring security 5.X                  |
 | [spring-actutor-auth](./spring-form-auth)                    | 基于basic和form混合认证,实现spring boot actutor Endpoints Basic认证   |
+| [spring-form-jwt-auth](./spring-form-jwt-auth)               | spring boot form表单实现jwt认证 基于spring security 5.X               |
+| [spring-sms-jwt-auth](./spring-sms-jwt-auth)                 | spring boot 手机短信验证码实现jwt认证 基于spring security 5.X         |
