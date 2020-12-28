@@ -1,0 +1,16 @@
+server:
+  port: 8100
+logging:
+  level:
+    org.springframework : debug
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: XXXXXX
+            client-secret: XXXX
+          gitte:
+            client-id: XXXXXX
+            client-secret: XXXXXX
