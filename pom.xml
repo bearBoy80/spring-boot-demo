@@ -11,11 +11,12 @@
         <module>spring-form-jwt-auth</module>
         <module>spring-sms-jwt-auth</module>
         <module>spring-security-oauth2-social</module>
+        <module>spring-boot-saml2-auth</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
+        <version>2.7.2</version>
         <relativePath/>
     </parent>
     <groupId>com.bearboy</groupId>
@@ -128,8 +129,22 @@
     </build>
     <repositories>
         <repository>
+            <id>maven2-release-repository</id>
+            <url>https://repo1.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>aliyun-repos</id>
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>shibboleth-repos</id>
+            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

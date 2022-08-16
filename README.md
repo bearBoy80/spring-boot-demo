@@ -28,3 +28,4 @@ springboot2 整合spring security
 | [spring-form-jwt-auth](./spring-form-jwt-auth)               | spring boot form表单实现jwt认证 基于spring security 5.X               |
 | [spring-sms-jwt-auth](./spring-sms-jwt-auth)                 | spring boot 手机短信验证码实现jwt认证 基于spring security 5.X         |
 | [spring-security-oauth2-social](./spring-security-oauth2-social)    | spring boot 实现第三方oauth2认证（github、gitee） 基于spring security 5.X |
+| [spring-boot-saml2-auth](./spring-boot-saml2-auth)    | spring boot 实现第三方saml2认证基于spring security 5.6+ |
