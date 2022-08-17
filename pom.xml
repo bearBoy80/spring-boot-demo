@@ -12,6 +12,7 @@
         <module>spring-sms-jwt-auth</module>
         <module>spring-security-oauth2-social</module>
         <module>spring-boot-saml2-auth</module>
+        <module>spring-cache-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
