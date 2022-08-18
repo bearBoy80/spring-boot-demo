@@ -1,3 +1,5 @@
 spring:
   cache:
     cache-names: indexService
+    jcache:
+      config: classpath:encache-setting.xml
