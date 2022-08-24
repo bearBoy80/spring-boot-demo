@@ -1,10 +1,10 @@
-<h1 align="center"><a href="https://github.com/bearBoy80/springSecurity.git" target="_blank">Spring Security</a></h1>
+<h1 align="center"><a href="https://github.com/bearBoy80/springSecurity.git" target="_blank">Spring Boot 相关组件整合</a></h1>
 <p align="center">
   <a href="https://travis-ci.com/github/bearBoy80/springSecurity"><img alt="Travis-CI" src="https://travis-ci.com/bearBoy80/springSecurity.svg?branch=master"/></a>
   <a href="https://www.codacy.com/manual/bearBoy80/springSecurity?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bearBoy80/springSecurity&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/b800466e41b140f28af11764be7b6495"/></a>
   <a href="http://www.betool.vip/"><img alt="author" src="https://img.shields.io/badge/author-bearBoy80-blue"/></a>
   <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html"><img alt="JDK" src="https://img.shields.io/badge/JDK-1.8+-orange.svg"/></a>
-  <a href="https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/reference/html/"><img alt="Spring Boot" src="https://img.shields.io/badge/Spring Boot-2.3.0.RELEASE-brightgreen.svg"/></a>
+  <a href="https://docs.spring.io/spring-boot/docs/2.7.3/reference/htmlsingle"><img alt="Spring Boot" src="https://img.shields.io/badge/Spring Boot-2.7.2-brightgreen.svg"/></a>
   <a href="https://github.com/bearBoy80/springSecurity/blob/master/LICENSE"><img alt="LICENSE" src="https://img.shields.io/github/license/bearBoy80/springsecurity.svg"/></a>  
 </p>
 
@@ -15,8 +15,8 @@
 </p>
 
 
-# springSecurity
-springboot2 整合spring security
+# springboot2+ 整合各种组件
+
 
 ## 各 Module 介绍
 
@@ -31,3 +31,4 @@ springboot2 整合spring security
 | [spring-boot-saml2-auth](./spring-boot-saml2-auth)    | spring boot 实现第三方saml2认证基于spring security 5.6+ |
 | [spring-cache-demo](./spring-cache-demo)    | spring boot 实现encache 缓存 |
 | [spring-boot-arg-demo](./spring-boot-arg-demo)    | spring boot 实现通过ApplicationArguments来获取应用传递参数 |
+| [spring-boot-json-demo](./spring-boot-json-demo)    | spring boot 实现自定义HttpMessageConverter来处理特定类的序列化和反序列化 |
