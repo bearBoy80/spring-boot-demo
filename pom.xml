@@ -15,6 +15,7 @@
         <module>spring-cache-demo</module>
         <module>spring-boot-arg-demo</module>
         <module>spring-boot-json-demo</module>
+        <module>spring-boot-task-demo</module>
 
     </modules>
     <parent>

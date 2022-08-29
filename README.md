@@ -32,3 +32,4 @@
 | [spring-cache-demo](./spring-cache-demo)    | spring boot 实现encache 缓存 |
 | [spring-boot-arg-demo](./spring-boot-arg-demo)    | spring boot 实现通过ApplicationArguments来获取应用传递参数 |
 | [spring-boot-json-demo](./spring-boot-json-demo)    | spring boot 实现自定义HttpMessageConverter来处理特定类的序列化和反序列化 |
+| [spring-boot-task-demo](./spring-boot-task-demo)    | spring boot 整合spring task |
