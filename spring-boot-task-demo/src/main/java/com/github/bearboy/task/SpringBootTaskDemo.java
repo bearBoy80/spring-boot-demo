@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @author bearboy80
  */
 @EnableAsync
+@EnableScheduling
 @SpringBootApplication
 public class SpringBootTaskDemo {
     public static void main(String[] args) {
@@ -43,6 +45,7 @@ class Index {
     @GetMapping("/index1")
     @Async
     public CompletableFuture<String> index1() {
+        System.out.println(Thread.currentThread().getName());
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {

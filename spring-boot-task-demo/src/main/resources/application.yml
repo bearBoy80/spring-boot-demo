@@ -1,0 +1,6 @@
+spring:
+  task:
+    execution:
+      pool:
+        core-size: 2
+      thread-name-prefix: task-demo
