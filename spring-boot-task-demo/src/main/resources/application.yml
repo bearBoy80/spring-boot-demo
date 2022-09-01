@@ -4,3 +4,9 @@ spring:
       pool:
         core-size: 2
       thread-name-prefix: task-demo
+
+my:
+  properties:
+    id: bear
+    name: test
+    enable: true
