@@ -17,6 +17,7 @@
         <module>spring-boot-json-demo</module>
         <module>spring-boot-task-demo</module>
         <module>spring-boot-customer-starter</module>
+        <module>spring-boot-react-web-demo</module>
 
     </modules>
     <parent>
