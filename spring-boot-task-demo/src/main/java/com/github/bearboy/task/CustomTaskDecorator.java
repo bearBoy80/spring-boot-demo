@@ -6,11 +6,10 @@ import org.springframework.util.StopWatch;
 
 @Configuration(proxyBeanMethods = false)
 public class CustomTaskDecorator implements TaskDecorator {
-    private StopWatch stopWatch = new StopWatch("CustomTaskDecorator");
-
     @Override
     public Runnable decorate(Runnable runnable) {
         return () -> {
+            StopWatch stopWatch = new StopWatch("CustomTaskDecorator");
             stopWatch.start();
             runnable.run();
             stopWatch.stop();

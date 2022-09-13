@@ -4,7 +4,10 @@ spring:
       pool:
         core-size: 2
       thread-name-prefix: task-demo
-
+    scheduling:
+      pool:
+        size:  2
+      thread-name-prefix: scheduling-demo
 my:
   properties:
     id: bear
