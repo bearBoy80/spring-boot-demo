@@ -18,5 +18,8 @@ public class MySchedulingConfigurer implements SchedulingConfigurer {
             System.out.println(new Date() + Thread.currentThread().getName() + "  configureTasks ");
         };
         taskRegistrar.addFixedDelayTask(new IntervalTask(runnable, 1000 * 11, 0));
+
+        taskRegistrar.addFixedDelayTask(new IntervalTask(runnable, 1000 * 11, 0));
+
     }
 }
