@@ -1,9 +1,14 @@
 package com.github.bearboy.task;
 
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.task.TaskSchedulerBuilder;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
+import org.springframework.scheduling.config.TaskManagementConfigUtils;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class CustomerTask {
     @Scheduled(fixedRate = 1, timeUnit = TimeUnit.SECONDS)
     public void doCustomerTask() {
-        System.out.println(Thread.currentThread().getName() + "do customer task");
+        System.out.println(Thread.currentThread().getName() + " do customer task");
     }
 
     @Scheduled(cron = "*/10 * * * * MON-FRI")
