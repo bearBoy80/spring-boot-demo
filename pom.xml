@@ -18,6 +18,7 @@
         <module>spring-boot-task-demo</module>
         <module>spring-boot-customer-starter</module>
         <module>spring-boot-react-web-demo</module>
+        <module>spring-boot-retry-demo</module>
 
     </modules>
     <parent>

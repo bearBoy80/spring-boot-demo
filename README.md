@@ -35,3 +35,4 @@
 | [spring-boot-task-demo](./spring-boot-task-demo)    | spring boot 整合spring task |
 | [spring-boot-customer-starter](./spring-boot-customer-starter)    | 基于@autoConfigure实现自定义starter |
 | [spring-boot-webflux-demo](./spring-boot-react-web-demo)    | 基于webflux实现一个简单的controller |
+| [spring-boot-retry-demo](./spring-boot-retry-demo)    | 基于spring-retry实现一个重试controller |
