@@ -3,7 +3,7 @@ server:
 spring:
   redis:
     database: 0
-    password: xxxxxx
+    password: xxx
     port: 6379
     timeout: 3000
     host: localhost
