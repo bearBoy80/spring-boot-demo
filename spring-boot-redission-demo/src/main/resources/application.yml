@@ -1,0 +1,9 @@
+server:
+  port: 9000
+spring:
+  redis:
+    database: 0
+    password: xxxxxx
+    port: 6379
+    timeout: 3000
+    host: localhost

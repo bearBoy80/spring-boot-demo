@@ -19,6 +19,7 @@
         <module>spring-boot-customer-starter</module>
         <module>spring-boot-react-web-demo</module>
         <module>spring-boot-retry-demo</module>
+        <module>spring-boot-redission-demo</module>
 
     </modules>
     <parent>
