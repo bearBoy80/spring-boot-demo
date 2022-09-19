@@ -3,7 +3,13 @@ server:
 spring:
   redis:
     database: 0
-    password: xxx
+    password: XEeNxUmPnw3eH7
     port: 6379
     timeout: 3000
-    host: localhost
+    host: 192.168.99.229
+  cache:
+    cache-names: IndexController
+    type: redis
+logging:
+  level:
+    root: info
