@@ -20,6 +20,7 @@
         <module>spring-boot-react-web-demo</module>
         <module>spring-boot-retry-demo</module>
         <module>spring-boot-redisson-demo</module>
+        <module>spring-boot-mongodb-demo</module>
 
     </modules>
     <parent>
