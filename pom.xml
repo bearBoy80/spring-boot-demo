@@ -22,6 +22,7 @@
         <module>spring-boot-redisson-demo</module>
         <module>spring-boot-mongodb-demo</module>
         <module>spring-boot-resilience4j-demo</module>
+        <module>spring-boot-openfeign-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

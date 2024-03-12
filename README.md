@@ -20,20 +20,21 @@
 
 ## 各 Module 介绍
 
-| Module 名称                                                  | Module 介绍                                                           |
-| ------------------------------------------------------------ | ----------------------------------------------------------------------|
-| [spring-basic-auth](./spring-basic-auth)                     | spring-boot 的一个http basic 认证 基于spring security 5.X             |
-| [spring-form-auth](./spring-form-auth)                       | spring-boot 的一个 form 认证 基于spring security 5.X                  |
-| [spring-actutor-auth](./spring-form-auth)                    | 基于basic和form混合认证,实现spring boot actutor Endpoints Basic认证   |
-| [spring-form-jwt-auth](./spring-form-jwt-auth)               | spring boot form表单实现jwt认证 基于spring security 5.X               |
-| [spring-sms-jwt-auth](./spring-sms-jwt-auth)                 | spring boot 手机短信验证码实现jwt认证 基于spring security 5.X         |
-| [spring-security-oauth2-social](./spring-security-oauth2-social)    | spring boot 实现第三方oauth2认证（github、gitee） 基于spring security 5.X |
-| [spring-boot-saml2-auth](./spring-boot-saml2-auth)    | spring boot 实现第三方saml2认证基于spring security 5.6+ |
-| [spring-cache-demo](./spring-cache-demo)    | spring boot 实现encache 缓存 |
-| [spring-boot-arg-demo](./spring-boot-arg-demo)    | spring boot 实现通过ApplicationArguments来获取应用传递参数 |
-| [spring-boot-json-demo](./spring-boot-json-demo)    | spring boot 实现自定义HttpMessageConverter来处理特定类的序列化和反序列化 |
-| [spring-boot-task-demo](./spring-boot-task-demo)    | spring boot 整合spring task |
-| [spring-boot-customer-starter](./spring-boot-customer-starter)    | 基于@autoConfigure实现自定义starter |
-| [spring-boot-webflux-demo](./spring-boot-react-web-demo)    | 基于webflux实现一个简单的controller |
-| [spring-boot-retry-demo](./spring-boot-retry-demo)    | 基于spring-retry实现一个重试controller |
-| [spring-boot-redisson-demo](./spring-boot-redisson-demo)    | 基于redisson实现连接redis服务 |
+| Module 名称                                                        | Module 介绍                                                    |
+|------------------------------------------------------------------|--------------------------------------------------------------|
+| [spring-basic-auth](./spring-basic-auth)                         | spring-boot 的一个http basic 认证 基于spring security 5.X           |
+| [spring-form-auth](./spring-form-auth)                           | spring-boot 的一个 form 认证 基于spring security 5.X                |
+| [spring-actutor-auth](./spring-form-auth)                        | 基于basic和form混合认证,实现spring boot actutor Endpoints Basic认证     |
+| [spring-form-jwt-auth](./spring-form-jwt-auth)                   | spring boot form表单实现jwt认证 基于spring security 5.X              |
+| [spring-sms-jwt-auth](./spring-sms-jwt-auth)                     | spring boot 手机短信验证码实现jwt认证 基于spring security 5.X             |
+| [spring-security-oauth2-social](./spring-security-oauth2-social) | spring boot 实现第三方oauth2认证（github、gitee） 基于spring security 5.X |
+| [spring-boot-saml2-auth](./spring-boot-saml2-auth)               | spring boot 实现第三方saml2认证基于spring security 5.6+               |
+| [spring-cache-demo](./spring-cache-demo)                         | spring boot 实现encache 缓存                                     |
+| [spring-boot-arg-demo](./spring-boot-arg-demo)                   | spring boot 实现通过ApplicationArguments来获取应用传递参数                |
+| [spring-boot-json-demo](./spring-boot-json-demo)                 | spring boot 实现自定义HttpMessageConverter来处理特定类的序列化和反序列化         |
+| [spring-boot-task-demo](./spring-boot-task-demo)                 | spring boot 整合spring task                                    |
+| [spring-boot-customer-starter](./spring-boot-customer-starter)   | 基于@autoConfigure实现自定义starter                                 |
+| [spring-boot-webflux-demo](./spring-boot-react-web-demo)         | 基于webflux实现一个简单的controller                                   |
+| [spring-boot-retry-demo](./spring-boot-retry-demo)               | 基于spring-retry实现一个重试controller                               |
+| [spring-boot-redisson-demo](./spring-boot-redisson-demo)         | 基于redisson实现连接redis服务                                        |
+| [spring-boot-resilience4j-demo](./spring-boot-resilience4j-demo)     | 基于resilience4j实现熔断限流|                                         |
