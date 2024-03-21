@@ -25,6 +25,7 @@
         <module>spring-boot-openfeign-demo</module>
         <module>spring-boot-tomcat-demo</module>
         <module>spring-boot-kafka-demo</module>
+        <module>Spring-boot-dynamic-config-refresh</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
